@@ -1,0 +1,10 @@
+runtime: python38
+entrypoint: #here is my etnrypoint  Figure out what I need to do here to run a django site.
+
+instance_class: F1
+
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
