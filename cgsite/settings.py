@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('CG_SITE_DJANGO_SECRET')
 DEBUG = False
 
 ALLOWED_HOSTS = ['.calebgeorge.dev', 'cg-playground.ue.r.appspot.com']
-
+#ALLOWED_HOSTS = ['.localhost', '127.0.0.1']
 
 # Application definition
 
