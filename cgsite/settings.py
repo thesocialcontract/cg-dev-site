@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "TODO: Learn what this is."
+SECRET_KEY = os.getenv('CG_SITE_DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.calebgeorge.dev', 'cg-playground.ue.r.appspot.com']
 
 
 # Application definition
@@ -72,13 +73,35 @@ WSGI_APPLICATION = 'cgsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+db_host = os.getenv('CG_SITE_DB_HOST')
+db_user = os.getenv('CG_SITE_DB_USER')
+db_pass = os.getenv('CG_SITE_DB_PASS')
+db_name = os.getenv('CG_SITE_DB_NAME')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if os.getenv('GAE_APPLICATION', None):
+    # APPENGINE
+    DATABASES = { 
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': f'/cloudsql/{db_host}',
+            'USER': db_user,
+            'PASSWORD': db_pass,
+            'NAME': db_name,
+        }
     }
-}
+else:
+    # LOCAL
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'USER': db_user,
+            'PASSWORD': db_pass,
+            'NAME': db_name,
+        }
+    }
+    
 
 
 # Password validation

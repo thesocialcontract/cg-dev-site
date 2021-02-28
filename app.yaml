@@ -1,5 +1,5 @@
 runtime: python38
-entrypoint: #here is my etnrypoint  Figure out what I need to do here to run a django site.
+# Entrypoint will default to main.py and App Engine's magic.
 
 instance_class: F1
 
@@ -8,3 +8,6 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   script: auto
+
+includes:
+  - env_variables.yaml
