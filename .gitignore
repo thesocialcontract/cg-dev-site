@@ -141,3 +141,4 @@ cython_debug/
 # -------- END STANDARD GITIGNORE ---------
 env_variables.yaml
 cloud_sql_proxy
+secret-notes.md

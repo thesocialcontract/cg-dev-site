@@ -15,7 +15,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+CGSITE_DIR = Path(__file__).resolve().parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -53,9 +53,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'cgsite.urls'
 
 TEMPLATES = [
-    {
+    {   # We're keeping Django Templates because it's coupled with the builtin admin app
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(CGSITE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +66,19 @@ TEMPLATES = [
             ],
         },
     },
+    # { # TODO: Renable this
+    #     'BACKEND': 'django.template.backends.jinja2.Jinja2',
+    #     'DIRS': [str(CGSITE_DIR.joinpath('templates'))],
+    #     'APP_DIRS': True,
+    #     'OPTIONS': {
+    #         'context_processors': [
+    #             'django.template.context_processors.debug',
+    #             'django.template.context_processors.request',
+    #             'django.contrib.auth.context_processors.auth',
+    #             'django.contrib.messages.context_processors.messages',
+    #         ],
+    #     },
+    # },
 ]
 
 WSGI_APPLICATION = 'cgsite.wsgi.application'
