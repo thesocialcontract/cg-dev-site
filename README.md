@@ -40,7 +40,19 @@ There are secrets that need passed to Django.  In order to keep them out of sour
 - Glitchart Gallery.
 - Resume Page.
 - Github/Code walkthrough.
+- Store static files on GStorage
+- Light/Dark Mode
+    - Glitch Stylesheets
+    - Material Stylesheets
+    - Gradient Stylesheets
+    - WYLTPA Stylesheets
+- If we use a CMS, use [wagtail](https://docs.wagtail.io/)
 
 ## Tech to Explore
 - Testing in Django
 - Realtime Glitchart, like Processing
+
+## Apps
+- blog
+- portfolio
+- 
