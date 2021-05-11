@@ -1,5 +1,108 @@
+/*------------------------------------------------------------------
+
+
+[Namespaces]
+
+o-			Object
+c-			Component
+s-			Scope
+u-			Utility
+is-, has-	State or Condition
+js-			JavaScript Hook
+_			Hack
+
+
+[Table of contents]
+
+1.  Elements
+2.  Animations
+3.  Objects
+4.  Components
+		4.1  Header
+		4.2  Footer
+		4.3  Nav
+		4.4  Headlines
+		4.4  Lists
+		4.6  Buttons
+		4.7  Figures
+		4.8  Asides
+		4.9  Callouts
+		4.10 Definition Lists
+		4.11 Forms
+		4.12 Loader
+		4.13 Tooltips
+        4.14 Tables
+        4.15 Wrappers
+        4.16 Modals
+5.  Scope
+6.  Utilities
+7.  Hacks
+8.  Vendor
+
+
+[Breakpoints]
+
+Smartphone. 480 (sm)
+Tablet.		640 (md)
+Laptop.		720 (lg)
+Desktop.	960 (xl)
+Wide.		1200 (xxl)
+
+
+-------------------------------------------------------------------*/
+
 html {
     display: block;
     background-color: #202124;
     color: #e8eaed;
 }
+
+/* Objects */
+*, *:before, *:after { box-sizing: inherit; }
+
+body { margin: 0; background: #202124; font-weight: 300; font-family: sans-serif; font-size: 16px }
+
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }
+	h2 { font-size: 2em; }
+	h3 { font-size: 1.5em; }
+    h4 { font-size: 1.25em; font-weight: 600; }
+
+img, video { display: block; width: 100%; height: auto; border: 0; }
+
+p { margin: 1em 0; }
+
+ul { list-style: circle; }
+
+a { color: #00bbbb; text-decoration: none; }
+
+	a:hover, a:focus { color: rgb(201, 230, 40); }
+
+button { cursor: pointer; }
+
+iframe { border: 0; }
+
+::selection { background: #226445; color: #fff; }   
+
+/* Components */
+.c-navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+}
+    .c-navbar__item {
+        position: relative;
+        flex-basis: auto;
+        padding: .5em;
+        margin: .5em;
+    }
+
+.c-footer {
+    margin: 2em;
+}
+    .c-footer__copyright {
+        font-size: 12px;
+        color: rgb(128, 128, 128)
+    }
