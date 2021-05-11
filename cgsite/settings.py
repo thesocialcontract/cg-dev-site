@@ -25,9 +25,9 @@ SECRET_KEY = os.getenv('CG_SITE_DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
-ALLOWED_HOSTS = ['.calebgeorge.dev', 'cg-playground.ue.r.appspot.com']
-#ALLOWED_HOSTS = ['.localhost', '127.0.0.1']
+#DEBUG = True
+ALLOWED_HOSTS = ['.calebgeorge.dev', 'cg-playground.ue.r.appspot.com'] # Prod
+#ALLOWED_HOSTS = ['.localhost', '127.0.0.1'] # Dev
 
 # Application definition
 
@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'cgsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-db_host = os.getenv('CG_SITE_DB_HOST')
-db_user = os.getenv('CG_SITE_DB_USER')
-db_pass = os.getenv('CG_SITE_DB_PASS')
+db_host = os.getenv('CG_SITE_DB_HOST')  # Endpoint
+db_user = os.getenv('CG_SITE_DB_USER')  # DB user (setup with gcp)
+db_pass = os.getenv('CG_SITE_DB_PASS')  # DB password (setup with gcp)
 db_name = os.getenv('CG_SITE_DB_NAME')
 
 if os.getenv('GAE_APPLICATION', None):
@@ -154,3 +154,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    str(CGSITE_DIR.joinpath("static"))
+]
