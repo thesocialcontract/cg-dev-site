@@ -7,3 +7,8 @@ def index(request):
         "variable": "foobar I'm injecting variables",
     }
     return HttpResponse(template.render(context, request))
+
+def julia(request):
+    template = loader.get_template("heart.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
