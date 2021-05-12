@@ -18,6 +18,12 @@ html, body {
     font-size: 5em;
     font-weight: 500;
     color: #7d1b1b;
+    animation: fadeIn ease-in-out .5s;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0 }
+    100% { opacity: 1 }
 }
 
 .c-love {text-align: center;}
