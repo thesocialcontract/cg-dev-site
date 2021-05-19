@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
-mysqlclient = "*"
 jinja2 = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

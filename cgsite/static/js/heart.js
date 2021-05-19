@@ -36,7 +36,7 @@ let phrases = [
     "Thank you for always working through things with me!",
     "I adore your heart! I hope mine can grow to half the size as yours! 💗",
     "Julia, you are the best!",
-    "I love you Julia <3",
+    "I love you Julia ❤️",
     "You're brilliant you radiant starlight!",
     "You're wonderful you delightful treasure!",
     "Kiss me 😘",
@@ -44,6 +44,12 @@ let phrases = [
     "Your laugh is infectious!",
     "I almost have as much affection for you as River :3",
     "Thank you for being you ❤️",
+    "You have my whole heart.",
+    "When I feel the warmth of sunlight on my face, I think of you.",
+    "We can do anything together.",
+    "When we're together, time is meaningless.",
+    "You're such a joy!",
+    "Empirical evidence indicates that just thinking about you makes the world ~76.58% brighter"
 ];
 let affirmationElems = document.getElementsByClassName("c-love");
 for (elem in affirmationElems) {

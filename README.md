@@ -5,31 +5,24 @@ Source for my dev site.  Intended to be a gallery and playground.
 You'll need:
 - Python 3.8 or greater.
 - Google Cloud SDK
-- Google Cloud SQL Proxy
 - Pipenv
 
-Step into the directory in your terminal and run `pipenv shell`
+There are secrets that need passed to Django.  In order to keep them out of source, we'll place those secrets in local files not included in source control.  Make sure you add the **.env** file and the **env_variables.yaml** file.  See cgsite/env_var_service.py for list of required env variables.
 
-To access the cloud DB proxy on Linux:
-- Run `wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy`
-- Then `chmod+x cloud_sql_proxy`
-- Then `./cloud_sql_proxy -instances={db-connection-name}=tcp:3306`
+Set environment variables in `.env` to your local postgresql instance.  Step into the directory in your terminal and run `pipenv install` then run `pipenv shell`
 
-There are secrets that need passed to Django.  In order to keep them out of source, we'll place those secrets in local files not included in source control.  Make sure you add the **.env** file and the **env_variables.yaml** file.  Add these env variables:
-- CG_SITE_DB_HOST
-- CG_SITE_DB_USER
-- CG_SITE_DB_PASS
-- CG_SITE_DB_NAME
+## Local Development
+1. Validate environment variables in `.env` to your local postgresql instance.  Set `CG_SITE_DEPLOY_ENV=local`
+2. Activate pipenv by running `pipenv shell`
+3. Run `python manage.py runserver`
 
 ## To Deploy
-- Validate server runs locally (see Django Docs).
-- Change ALLOWED_HOSTS in settings.py from dev to prod line.
-- Generate dependencies with `pipenv lock -r > requirements.txt`
-- Run `gcloud app deploy app.yaml`
+- Create env_variables_prod.yaml if necessary
+- run deploy.sh
 
 ## Wishlist
 - React or Angular frontend.
-- Simplify deploy to a command.
+- ~~Simplify deploy to a command.~~
 - Simplify setup to a command.
 - Switch to ASGI to enable websockets applications.
 - Plug in Aji.
@@ -55,4 +48,4 @@ There are secrets that need passed to Django.  In order to keep them out of sour
 ## Apps
 - blog
 - portfolio
-- 
+- gallery
