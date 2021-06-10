@@ -49,7 +49,17 @@ let phrases = [
     "We can do anything together.",
     "When we're together, time is meaningless.",
     "You're such a joy!",
-    "Empirical evidence indicates that just thinking about you makes the world ~76.58% brighter"
+    "Empirical evidence indicates that just thinking about you makes the world ~76.58% brighter",
+    "I love how understanding you are and how you strive for empathy and love.",
+    "I love how you're there for your friends.",
+    "I love how disciplined you are and how you use it to strive for great things. 💪",
+    "I love how you check-in with me to see where I'm at and how I'm feeling.",
+    "I love how communicative you are, and how we've worked through distance.",
+    "❤️ I love how you love. ❤️",
+    "The world melts away when we hug.",
+    "I love whenever we share our time together.  I'm so happy you share your time with mine.",
+    "You make me feel so loved and cared about.",
+    "You make me feel like the luckiest guy alive."
 ];
 let affirmationElems = document.getElementsByClassName("c-love");
 for (elem in affirmationElems) {
