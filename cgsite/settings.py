@@ -47,8 +47,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'cgsite.urls'
 
 TEMPLATES = [
-    {   # We're keeping Django Templates because it's coupled with the builtin admin app
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    {   # We're using Jinja2 templates because it's used across many frameworks.  i.e. I want to know it more than Django Templates
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
         'DIRS': [str(CGSITE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -60,19 +60,18 @@ TEMPLATES = [
             ],
         },
     },
-    # { # TODO: Renable this
-    #     'BACKEND': 'django.template.backends.jinja2.Jinja2',
-    #     'DIRS': [str(CGSITE_DIR.joinpath('templates'))],
-    #     'APP_DIRS': True,
-    #     'OPTIONS': {
-    #         'context_processors': [
-    #             'django.template.context_processors.debug',
-    #             'django.template.context_processors.request',
-    #             'django.contrib.auth.context_processors.auth',
-    #             'django.contrib.messages.context_processors.messages',
-    #         ],
-    #     },
-    # },
+    {   # We're keeping Django Templates because it's coupled with the builtin admin app
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
 ]
 
 WSGI_APPLICATION = 'cgsite.wsgi.application'

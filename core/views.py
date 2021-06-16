@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.template import loader
+from datetime import datetime
 
 def index(request):
     template = loader.get_template("base.html")
     context = {
-        "variable": "foobar I'm injecting variables",
+        "year": datetime.now().year
     }
     return HttpResponse(template.render(context, request))
 
