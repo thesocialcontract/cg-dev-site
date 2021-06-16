@@ -50,13 +50,13 @@ Wide.		1200 (xxl)
 
 [Palette]
 #9a50a5
-#39477f
+#39477f <- delimiter
 #59569e
 #d34ca3
 #f25192
-#f77c88
+#f77c88 <- Highlight
 #fc9f95
-#edb88f
+#edb88f <- Hover
 #ffffff
 #091a24
 -------------------------------------------------------------------*/
@@ -73,6 +73,7 @@ html {
 body { margin: 0; background: #202124; font-weight: 300; font-family: sans-serif; font-size: 16px }
 
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
+    h1 { font-size: 3em; }
 	h2 { font-size: 2em; }
 	h3 { font-size: 1.5em; }
     h4 { font-size: 1.25em; font-weight: 600; }
@@ -83,36 +84,79 @@ p { margin: 1em 0; }
 
 ul { list-style: circle; }
 
-a { color: #00bbbb; text-decoration: none; }
+a { color: #f77c88; text-decoration: none; }
 
-	a:hover, a:focus { color: rgb(201, 230, 40); }
+	a:hover, a:focus { color: #edb88f }
 
 button { cursor: pointer; }
 
 iframe { border: 0; }
 
-::selection { background: #226445; color: #fff; }   
+::selection { background: #39477f; color: #fff; }   
 
 /* Components */
 .c-navbar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
     align-items: center;
-    height: 3em;
+    font-size: 1.15em;
+    box-shadow: 0em 0.5em 1em #212121;
+    background: #2a2b2e;
 }
     .c-navbar__item {
         position: relative;
         flex-basis: auto;
         padding: .5em;
-        margin: .5em;
+        margin: .5em ;
+    }
+
+
+.c-container {
+    padding: 1em;
+}
+
+    .c-container__central {
+        margin-left: 12rem;
+        margin-right: 12rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .c-container__splash {
+        padding: 12rem;
     }
 
 .c-footer {
-    margin: 2em;
+    height: 100%;
 }
     .c-footer__copyright {
         font-size: 12px;
         color: rgb(128, 128, 128)
     }
+
+.c-home-icon {
+    height: auto;
+    max-height: 2em;
+    max-width: 2em;
+    border-radius: 1em;
+}
+
+.c-card {
+    background: #2a2b2e;
+    box-shadow: 0.5em 0.5em 1em #212121;
+}
+
+.u-flex {
+    display: flex;
+}
+.u-justify-between {
+    justify-content: space-between;
+}
+
+.u-align-center {
+    align-items: center;
+}
+.u-fullwidth {
+    width: 100%
+}

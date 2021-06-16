@@ -3,7 +3,7 @@ from django.template import loader
 from datetime import datetime
 
 def index(request):
-    template = loader.get_template("base.html")
+    template = loader.get_template("core/index.html")
     context = {
         "year": datetime.now().year
     }
