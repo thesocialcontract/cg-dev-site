@@ -3,9 +3,9 @@
 
 [Namespaces]
 
+l-          Layout
 o-			Object
 c-			Component
-s-			Scope
 u-			Utility
 is-, has-	State or Condition
 js-			JavaScript Hook
@@ -16,29 +16,11 @@ _			Hack
 
 1.  Elements
 2.  Animations
-3.  Objects
-4.  Components
-		4.1  Header
-		4.2  Footer
-		4.3  Nav
-		4.4  Headlines
-		4.4  Lists
-		4.6  Buttons
-		4.7  Figures
-		4.8  Asides
-		4.9  Callouts
-		4.10 Definition Lists
-		4.11 Forms
-		4.12 Loader
-		4.13 Tooltips
-        4.14 Tables
-        4.15 Wrappers
-        4.16 Modals
-5.  Scope
+3.  Layouts -- Structural namespace.  Things like flex
+4.  Objects -- 'Atomic' objects.  Context-independent.  Cannot be structural.
+5.  Components -- Larger building blocks.  Context-aware.  (analogy: A mesh, not polygon)
 6.  Utilities
 7.  Hacks
-8.  Vendor
-
 
 [Breakpoints]
 
@@ -70,7 +52,14 @@ html {
 /* Objects */
 *, *:before, *:after { box-sizing: inherit; }
 
-body { margin: 0; background: #202124; font-weight: 300; font-family: sans-serif; font-size: 16px }
+body { 
+    margin: 0;
+    background: #202124;
+    font-weight: 300;
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 100%;
+}
 
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
     h1 { font-size: 3em; }
@@ -147,16 +136,39 @@ iframe { border: 0; }
     box-shadow: 0.5em 0.5em 1em #212121;
 }
 
-.u-flex {
+.c-main-bg {
+    background-image: url('/static/svg/bg0.svg');
+    background-position: bottom;
+    background-size: cover;
+}
+
+.c-main {
+    /*flex: 1 1 auto;*/
+}
+
+.l-flex {
     display: flex;
 }
-.u-justify-between {
+.l-justify-between {
     justify-content: space-between;
 }
 
-.u-align-center {
+.l-align-center {
     align-items: center;
 }
-.u-fullwidth {
+
+.l-fullwidth {
     width: 100%
+}
+
+.l-absolute {
+    position: absolute
+}
+
+.l-relative {
+    position: relative;
+}
+
+.u-hidden {
+    visibility: hidden;
 }
