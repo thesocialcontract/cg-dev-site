@@ -1,0 +1,218 @@
+/*------------------------------------------------------------------
+
+
+[Namespaces]
+
+l-          Layout
+o-			Object
+c-			Component
+u-			Utility
+is-, has-	State or Condition
+js-			JavaScript Hook
+_			Hack
+
+
+[Table of contents]
+
+1.  Elements
+2.  Animations
+3.  Layouts -- Structural namespace.  Things like flex
+4.  Objects -- 'Atomic' objects.  Context-independent.  Cannot be structural.
+5.  Components -- Larger building blocks.  Context-aware.  (analogy: A mesh, not polygon)
+6.  Utilities
+7.  Hacks
+-------------------------------------------------------------------*/
+$color-bg-1: #091a24;
+$color-bg-2: #39477f;
+$color-bg-3: #202124;
+$color-font: #e8eaed;
+$color-grad-1: #39477f; // Delimiter
+$color-grad-2: #59569e;
+$color-grad-3: #9a50a5;
+$color-grad-4: #d34ca3;
+$color-grad-5: #f25192;
+$color-grad-6: #f77c88; // Highlight
+$color-grad-7: #fc9f95;
+$color-grad-8: #edb88f; // Hover
+$color-shadow: #212121;
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+}
+
+html {
+    display: block;
+    background-color: $color-bg-3;
+    color: $color-font;
+}
+
+/* Objects */
+*, *:before, *:after { box-sizing: inherit; }
+
+body { 
+    margin: 0;
+    background: $color-bg-3;
+    font-weight: 300;
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }
+    h1 { font-size: 3em; }
+	h2 { font-size: 2em; }
+	h3 { font-size: 1.5em; }
+    h4 { font-size: 1.25em; font-weight: 600; }
+
+img, video { display: block; width: 100%; height: auto; border: 0; }
+
+p { margin: 1em 0; }
+
+ul { list-style: circle; }
+
+a { color: $color-grad-6; text-decoration: none; }
+
+	a:hover, a:focus { color: $color-grad-8 }
+
+button { cursor: pointer; }
+
+iframe { border: 0; }
+
+::selection { background: $color-grad-1; color: #fff; }   
+
+/* Components */
+.c-navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: 1.15em;
+    box-shadow: 0em 0.5em 1em $color-shadow;
+    background: #2a2b2e;
+}
+    .c-navbar__item {
+        position: relative;
+        flex-basis: auto;
+        padding: .5em;
+        margin: .5em ;
+    }
+
+
+.c-container {
+    padding: 1em;
+}
+
+    .c-container__central {
+        @include for-phone-only {
+            
+        }
+        @include for-tablet-portrait-up {
+            padding-top:    4rem;
+            padding-bottom: 4rem;
+            padding-left:   4rem;
+            padding-right:  4rem;
+        }
+        @include for-tablet-landscape-up {
+            padding-top:    12rem;
+            padding-bottom: 12rem;
+            padding-left:   8rem;
+            padding-right:  8rem;
+        }
+        @include for-desktop-up {
+            padding-top:    16rem;
+            padding-bottom: 20rem;
+            padding-left:   12rem;
+            padding-right:  12rem;
+        }
+    }
+
+
+.c-footer {
+    height: 100%;
+}
+    .c-footer__copyright {
+        font-size: 12px;
+        color: rgb(128, 128, 128)
+    }
+
+.c-home-icon {
+    height: auto;
+    max-height: 2em;
+    max-width: 2em;
+    border-radius: 1em;
+}
+
+.c-card {
+    background: #2a2b2e;
+    box-shadow: 0.5em 0.5em 1em $color-shadow;
+}
+
+.c-card__glass {
+    background: rgba(21, 21, 21, .85);
+    box-shadow: 0.5em 0.5em 1em $color-shadow;
+    backdrop-filter: blur(1px);
+}
+
+.c-main-bg {
+    background-image: url('/static/svg/bg0.svg');
+    background-position: bottom;
+    background-size: cover;
+}
+
+.c-main {
+    /*flex: 1 1 auto;*/
+}
+
+.l-flex, .flex {
+    display: flex;
+}
+
+.flex-lg {
+    @include for-tablet-landscape-up {
+        display: flex;
+    }
+}
+
+.l-flex-col, .flex-col {
+    flex-direction: column;
+}
+
+.l-justify-between {
+    justify-content: space-between;
+}
+
+.l-align-center {
+    align-items: center;
+}
+
+.l-fullwidth {
+    width: 100%
+}
+
+.l-absolute {
+    position: absolute
+}
+
+.l-relative {
+    position: relative;
+}
+
+.u-hidden {
+    visibility: hidden;
+}
+
+.u-transluscent {
+    opacity: 80%;
+}

@@ -18,21 +18,22 @@
   {# ? Pre-Body JS block #}
 </head>
 <body>
-  {% block navbar %}
-    {% include "includes/navbar.html" %}
-  {% endblock %}
+  <div class="flex flex-col l-fullwidth">
+    {% block navbar %}
+      {% include "includes/navbar.html" %}
+    {% endblock %}
 
-  {% block header %}
-    {% include "includes/header.html" %}
-  {% endblock %}
+    {% block header %}
+      {% include "includes/header.html" %}
+    {% endblock %}
 
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
 
-  {% block footer %}
-    {% include "includes/footer.html" %}
-  {% endblock %}
-
+    {% block footer %}
+      {% include "includes/footer.html" %}
+    {% endblock %}
+  </div>
   {# Require JS #}
   <script data-main="js/main.js"></script>
 </body>
