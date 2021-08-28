@@ -22,19 +22,25 @@ _			Hack
 6.  Utilities
 7.  Hacks
 -------------------------------------------------------------------*/
-$color-bg-1: #091a24;
-$color-bg-2: #39477f;
-$color-bg-3: #202124;
-$color-font: #e8eaed;
-$color-grad-1: #39477f; // Delimiter
-$color-grad-2: #59569e;
-$color-grad-3: #9a50a5;
-$color-grad-4: #d34ca3;
-$color-grad-5: #f25192;
-$color-grad-6: #f77c88; // Highlight
-$color-grad-7: #fc9f95;
-$color-grad-8: #edb88f; // Hover
-$color-shadow: #212121;
+$color-dom: #050526;        // #29428C less saturated
+$color-dom-1: #081340;      // #091126
+$color-dom-2: #0e2154;      // #111E40
+$color-dom-3: #223a8c;      // #223773
+$color-accent: #EE639A;     // #eb6390
+$color-accent-1: #e79cb5;
+$color-selection: #AAA;
+$color-shadow: #101010a1;
+
+$color-font-light: #c2d9ff;
+$color-darkfont-for-darkbg: #7079e0;
+$color-font: $color-font-light;
+
+$color-card-bg: $color-dom-2;
+$color-card-bg-translucent: #0b112d;
+
+$color-bg-dark: $color-dom;
+$color-bg-med: $color-dom-1;
+$color-bg-light: $color-dom-2;
 
 @mixin for-phone-only {
     @media (max-width: 599px) { @content; }
@@ -52,9 +58,20 @@ $color-shadow: #212121;
     @media (min-width: 1800px) { @content; }
 }
 
+
+@mixin box-shadow-close {
+    box-shadow: 0 0 1em $color-shadow, .5em .5em 1em $color-shadow
+}
+@mixin box-shadow-med {
+    box-shadow: 0 0 1em $color-shadow, .5em .5em 1.5em $color-shadow
+}
+@mixin box-shadow-far {
+    box-shadow: 0 0 1em $color-shadow, .5em .5em 2em $color-shadow
+}
+
 html {
     display: block;
-    background-color: $color-bg-3;
+    background-color: $color-bg-dark;
     color: $color-font;
 }
 
@@ -63,7 +80,7 @@ html {
 
 body { 
     margin: 0;
-    background: $color-bg-3;
+    background: $color-bg-dark;
     font-weight: 300;
     font-family: sans-serif;
     font-size: 16px;
@@ -82,15 +99,15 @@ p { margin: 1em 0; }
 
 ul { list-style: circle; }
 
-a { color: $color-grad-6; text-decoration: none; }
+a { color: $color-accent; text-decoration: none; }
 
-	a:hover, a:focus { color: $color-grad-8 }
+	a:hover, a:focus { color: $color-accent-1 }
 
 button { cursor: pointer; }
 
 iframe { border: 0; }
 
-::selection { background: $color-grad-1; color: #fff; }   
+::selection { background: $color-selection; color: #fff; }   
 
 /* Components */
 .c-navbar {
@@ -100,7 +117,7 @@ iframe { border: 0; }
     align-items: center;
     font-size: 1.15em;
     box-shadow: 0em 0.5em 1em $color-shadow;
-    background: #2a2b2e;
+    background: $color-bg-light;
 }
     .c-navbar__item {
         position: relative;
@@ -138,13 +155,20 @@ iframe { border: 0; }
         }
     }
 
+.c-section {
+    background: $color-bg-dark;
+}
+    .c-section-med {
+        background: $color-bg-med;
+    }
 
 .c-footer {
     height: 100%;
+    background: $color-bg-med;
 }
     .c-footer__copyright {
         font-size: 12px;
-        color: rgb(128, 128, 128)
+        color: $color-font-light
     }
 
 .c-home-icon {
@@ -155,18 +179,17 @@ iframe { border: 0; }
 }
 
 .c-card {
-    background: #2a2b2e;
-    box-shadow: 0.5em 0.5em 1em $color-shadow;
+    background: $color-card-bg;
+    @include box-shadow-far();
 }
 
-.c-card__glass {
-    background: rgba(21, 21, 21, .85);
-    box-shadow: 0.5em 0.5em 1em $color-shadow;
-    backdrop-filter: blur(1px);
+.c-card__dark {
+    background: $color-card-bg-translucent;
+    @include box-shadow-close();
 }
 
 .c-main-bg {
-    background-image: url('/static/svg/bg0.svg');
+    background-image: url('/static/svg/bg-blue.svg');
     background-position: bottom;
     background-size: cover;
 }
