@@ -22,10 +22,11 @@ _			Hack
 6.  Utilities
 7.  Hacks
 -------------------------------------------------------------------*/
-$color-dom: #050526;        // #29428C less saturated
+$color-dom: #04041b;        // #29428C less saturated
 $color-dom-1: #081340;      // #091126
 $color-dom-2: #0e2154;      // #111E40
 $color-dom-3: #223a8c;      // #223773
+$color-dom-4: #050526;
 $color-accent: #EE639A;     // #eb6390
 $color-accent-1: #e79cb5;
 $color-selection: #AAA;
@@ -36,7 +37,7 @@ $color-darkfont-for-darkbg: #7079e0;
 $color-font: $color-font-light;
 
 $color-card-bg: $color-dom-2;
-$color-card-bg-translucent: #0b112d;
+$color-card-bg-translucent: #0c1646;
 
 $color-bg-dark: $color-dom;
 $color-bg-med: $color-dom-1;
@@ -111,10 +112,6 @@ iframe { border: 0; }
 
 /* Components */
 .c-navbar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
     font-size: 1.15em;
     box-shadow: 0em 0.5em 1em $color-shadow;
     background: $color-bg-light;
@@ -123,7 +120,7 @@ iframe { border: 0; }
         position: relative;
         flex-basis: auto;
         padding: .5em;
-        margin: .5em ;
+        margin: .5em;
     }
 
 
@@ -158,7 +155,7 @@ iframe { border: 0; }
 .c-section {
     background: $color-bg-dark;
 }
-    .c-section-med {
+    .c-section_alt {
         background: $color-bg-med;
     }
 
@@ -183,7 +180,7 @@ iframe { border: 0; }
     @include box-shadow-far();
 }
 
-.c-card__dark {
+.c-card_dark {
     background: $color-card-bg-translucent;
     @include box-shadow-close();
 }
@@ -194,48 +191,14 @@ iframe { border: 0; }
     background-size: cover;
 }
 
-.c-main {
-    /*flex: 1 1 auto;*/
-}
-
-.l-flex, .flex {
-    display: flex;
-}
-
-.flex-lg {
-    @include for-tablet-landscape-up {
-        display: flex;
-    }
-}
-
-.l-flex-col, .flex-col {
-    flex-direction: column;
-}
-
-.l-justify-between {
-    justify-content: space-between;
-}
-
-.l-align-center {
-    align-items: center;
-}
-
-.l-fullwidth {
-    width: 100%
-}
-
-.l-absolute {
-    position: absolute
-}
-
-.l-relative {
-    position: relative;
-}
-
 .u-hidden {
     visibility: hidden;
 }
 
 .u-transluscent {
     opacity: 80%;
+}
+
+.h-half-screen {
+    height: 50vh;
 }
