@@ -59,7 +59,12 @@ let phrases = [
     "The world melts away when we hug.",
     "I love whenever we share our time together.  I'm so happy you share your time with mine.",
     "You make me feel so loved and cared about.",
-    "You make me feel like the luckiest guy alive."
+    "You make me feel like the luckiest guy alive.",
+    "You're a cutie with the greatest booty",
+    "You're a hottie with a rad body",
+    "I love when I kiss your cheek and you demand \"More!\"",
+    "🦖 I love when you T-Rex 🦖",
+    "I love when we cook together",
 ];
 let affirmationElems = document.getElementsByClassName("c-love");
 for (elem in affirmationElems) {

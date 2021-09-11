@@ -138,8 +138,17 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# -------- END STANDARD GITIGNORE ---------
+# -----------------------------------------
+# ---------- PROJECT SPECIFIC -------------
+# -----------------------------------------
 env_variables.yaml
 env_variables_prod.yaml
 cloud_sql_proxy
 secret-notes.md
+
+secret-*.md
+
+# CSS
+*.css.map
+cgsite/static/css/*
+cgsite/static/src/*

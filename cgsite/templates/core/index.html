@@ -1,14 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="c-container__central c-container__splash u-flex u-justify-between u-align-center">
-    <div class="c-container">
-        <h1>caleb.george</h1>
-        <h2>creativity &amp; engineering</h2>
-    </div>
-    <div class="c-container c-card">
-        <h3><a href="/porfolio"><u>See my portfolio.</u></a></h3>
-        <p>Check out the process.</p>
-        <p>...or check out my creative hobbies!</p>
-    </div>
-</div>
+<main>
+    <section class="c-main-bg">
+        <div class="c-container__central flex justify-center">
+            <div class="flex justify-between items-center w-9/12">
+                <div class="c-container c-card_dark">
+                    <h1>caleb.george</h1>
+                    <h2>creativity &amp; engineering</h2>
+                </div>
+                <div class="c-container c-card w-3/12">
+                    <h3><a href="/devnotes"><u>Check out my process.</u></a></h3>
+                    <p>Creativity is a messy, meandering maze.  See my music, code, and creative journies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="c-section_alt h-screen mb-8 flex items-center justify-center">
+        <div class="mx-8 w-4/12">
+            <img src="/static/svg/blueprint.svg">
+        </div>
+        <div class="w-4/12">
+            <h2>We tend to only ever post our best work.</h2>
+            <p>The reality is most of our work is private and messy.  This site aims to show behind the scenes--to discover the process for myself and anyone that would find it helpful.</p>
+        </div>
+    </section>
+    <section class="c-section my-8 h-screen flex flex-col justify-center">
+        <div class="flex content-end justify-center">
+            <h2 class="mb-8">
+                Project Principles
+            </h2>
+        </div>
+        <div class="flex items-center justify-center">
+            <div class="flex w-8/12 justify-center">
+                <div class="c-card mx-4 p-4">
+                    <div class="w-full">
+                        <img src="/static/svg/learn.svg">
+                    </div>
+                    <h2>Learn Publicly</h2>
+                    <p>You only really understand a thing when you can explain it.  You get another resource for learning, and I get a better understanding.</p>
+                </div>
+                <div class="c-card mx-4 p-4">
+                    <div class="w-full">
+                        <img src="/static/svg/confusion.svg">
+                    </div>
+                    <h2>Share the mess</h2>
+                    <p>We shy away from showing off our mistakes and subpar projects.  We <b>all</b> have them.  There is value in the mess, not just in what comes of it.</p>
+                </div>
+                <div class="c-card mx-4 p-4">
+                    <div class="w-full">
+                        <img src="/static/svg/journal.svg">
+                    </div>
+                    <h2>Record notes</h2>
+                    <p>A lead devloper I worked with once told me, "I figure any time I write an email to more than 2 people, it should be in a wiki so anyone can refer to it."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--<section class="c-section">
+        <h2>See what I've done</h2>
+        <ul>
+            <li>code</li>
+            <li>music</li>
+        </ul>
+    </section>-->
+    <section class="c-section_alt h-screen mt-8 flex items-center justify-center">
+        <h1 class="">
+            Thanks for being a part of the mess.
+        </h1>
+    </section>
+</main>
 {% endblock %}

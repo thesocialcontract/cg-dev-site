@@ -4,35 +4,37 @@
   <meta charset="utf-8">
   <meta name="Copyright" content="Caleb George" />
   <meta name="ROBOTS" content="ALL" />
-  <meta name="keywords" content="Developer, Software Engineer, Python, Django, Musician, Creative, Code, Git" />
-
+  <meta name="keywords" content="Developer, Software Engineer, Python, Django, Musician, Creative, Code, Git" />  
+  
   {% block link_rel_tags %}{% endblock link_rel_tags %}
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png">
   <link rel="icon" sizes="192x192" href="static/img/android-chrome-192x192.png">
-  <link rel="shortcut icon" href="static/img/favicon.ico">      
+  <link rel="shortcut icon" href="static/img/favicon.ico">      <!-- CSS only -->
 
   <title>{% block title %}a curious playground{% endblock %}</title>
 
+  <link rel="stylesheet" href="static/css/tailwind.css" >
   <link rel="stylesheet" href="static/css/darkmode.css" >
   {# ? Pre-Body JS block #}
 </head>
 <body>
-  {% block navbar %}
-    {% include "includes/navbar.html" %}
-  {% endblock %}
+  <div class="flex flex-col w-full">
+    {% block navbar %}
+      {% include "includes/navbar.html" %}
+    {% endblock %}
 
-  {% block header %}
-    {% include "includes/header.html" %}
-  {% endblock %}
+    {% block header %}
+      {% include "includes/header.html" %}
+    {% endblock %}
 
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
 
-  {% block footer %}
-    {% include "includes/footer.html" %}
-  {% endblock %}
-
+    {% block footer %}
+      {% include "includes/footer.html" %}
+    {% endblock %}
+  </div>
   {# Require JS #}
   <script data-main="js/main.js"></script>
 </body>
