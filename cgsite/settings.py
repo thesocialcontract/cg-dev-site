@@ -33,6 +33,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+    'modelcluster',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -43,26 +56,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'cgsite.urls'
 
 TEMPLATES = [
-    {   # We're using Jinja2 templates because it's used across many frameworks.  i.e. I want to know it more than Django Templates
-        'BACKEND': 'django.template.backends.jinja2.Jinja2',
-        'DIRS': [str(CGSITE_DIR.joinpath('templates'))],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-    {   # We're keeping Django Templates because it's coupled with the builtin admin app
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [str(CGSITE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,12 +84,12 @@ WSGI_APPLICATION = 'cgsite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': env.DB_ENGINE,
-        'HOST': env.DB_HOST,
-        'PORT': env.DB_PORT,
-        'USER': env.DB_USER,
+        'ENGINE':   env.DB_ENGINE,
+        'HOST':     env.DB_HOST,
+        'PORT':     env.DB_PORT,
+        'USER':     env.DB_USER,
         'PASSWORD': env.DB_PASS,
-        'NAME': env.DB_NAME,
+        'NAME':     env.DB_NAME,
     }
 }
 
@@ -122,6 +124,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     str(CGSITE_DIR.joinpath("static"))
 ]
+MEDIA_ROOT = str(CGSITE_DIR.joinpath("media"))
+MEDIA_URL = "/media/"
+WAGTAIL_SITE_NAME = 'CGSite Devblog'
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.search.backends.database',
+    }
+}

@@ -12,6 +12,9 @@ cgsite/static/css/*
 cgsite/static/src/*
 .sass-cache
 
+cgsite/static/wagtail*
+cgsite/static/admin/
+
 # ------------- END Project Specific --------------
 
 # Python gitignore template from https://github.com/github/gitignore/blob/master/Python.gitignore

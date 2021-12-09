@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="Copyright" content="Caleb George" />
   <meta name="ROBOTS" content="ALL" />
-  <meta name="keywords" content="Developer, Software Engineer, Python, Django, Musician, Creative, Code, Git" />  
+  <meta name="keywords" content="Developer, Software Engineer, Python, Django, Musician, Creative, Code, Git" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   
   {% block link_rel_tags %}{% endblock link_rel_tags %}
   <!-- Favicons -->
-  <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png">
-  <link rel="icon" sizes="192x192" href="static/img/android-chrome-192x192.png">
-  <link rel="shortcut icon" href="static/img/favicon.ico">      <!-- CSS only -->
+  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+  <link rel="icon" sizes="192x192" href="{% static 'img/android-chrome-192x192.png' %}">
+  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">      <!-- CSS only -->
   <title>{% block title %}a curious playground{% endblock %}</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&family=IBM+Plex+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/darkmode.css" >
+  <link rel="stylesheet" href="{% static 'css/darkmode.css' %}" >
   {# ? Pre-Body JS block #}
 </head>
 <body>
@@ -35,6 +37,6 @@
     {% endblock %}
   </div>
   {# Require JS #}
-  <script src="/static/js/main.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
