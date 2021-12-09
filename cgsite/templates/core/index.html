@@ -1,70 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="c-main-bg">
-    <div class="c-container__central flex justify-center">
-        <div class="flex justify-between items-center w-9/12">
-            <div class="c-container c-card_dark">
+<main>
+<div id="particles-js" class="pointer-events-none z-0"></div>
+<section class="c-content">
+    <div class="mr-16 mb-16 block md:flex md:justify-center lg:align-center z-10">
+        <div class="p-4 o-card-grad sm:w-10/12 md:w-8/12 md:flex-1 lg:max-w-min z-10">
+            <div>
+                <img src="/static/svg/muse.svg" class="max-w-md lg:max-w-lg">
+            </div>
+            <div class="md:max-w-lg">
                 <h1>caleb.george</h1>
-                <h2>creativity &amp; engineering</h2>
+                <h3>creativity &amp; engineering</h3>
             </div>
-            <div class="c-container c-card w-3/12">
-                <h3><a href="/devnotes"><u>See Behind the Curtains.</u></a></h3>
-                <p>Creativity is a messy, meandering maze. See my music, code, and creative journies.</p>
+        </div>
+        <div class="flex justify-between items-center w-full lg:max-w-xl z-10">
+            <div class="container p-4">
+                <div onclick="location.href='https://github.com/thesocialcontract'" class="c-content-bubble clickable">
+                    <span class="material-icons">computer</span> code<span class="material-icons">navigate_next</span>
+                </div>
+                <div onclick="location.href='/blog'" class="c-content-bubble clickable">
+                    <span class="material-icons">text_snippet</span> devblog<span class="material-icons">navigate_next</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section class="c-section_alt h-screen mb-8 flex items-center justify-center">
-    <div class="mx-8 w-4/12">
-        <img src="/static/svg/blueprint.svg">
-    </div>
-    <div class="w-4/12">
-        <h2>We tend to only ever post our best work.</h2>
-        <p>The reality is most of our work is private and messy. This site aims to show behind the scenes--to discover the process for myself and anyone that would find it helpful.</p>
-    </div>
-</section>
-<section class="c-section my-8 h-screen flex flex-col justify-center">
-    <div class="flex content-end justify-center">
-        <h2 class="mb-8">
-            Project Principles
-        </h2>
-    </div>
-    <div class="flex items-center justify-center">
-        <div class="flex w-8/12 justify-center">
-            <div class="c-card mx-4 p-4">
-                <div class="w-full">
-                    <img src="/static/svg/learn.svg">
-                </div>
-                <h2>Learn Publicly</h2>
-                <p>You only really understand a thing when you can explain it.  You get another resource for learning, and I get a better understanding.</p>
-            </div>
-            <div class="c-card mx-4 p-4">
-                <div class="w-full">
-                    <img src="/static/svg/confusion.svg">
-                </div>
-                <h2>Share the mess</h2>
-                <p>We shy away from showing off our mistakes and subpar projects.  We <b>all</b> have them.  There is value in the mess, not just in what comes of it.</p>
-            </div>
-            <div class="c-card mx-4 p-4">
-                <div class="w-full">
-                    <img src="/static/svg/journal.svg">
-                </div>
-                <h2>Record the process</h2>
-                <p>Having a record gives a reference for anyone in the future, whether it's a stranger or future me.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!--<section class="c-section">
-    <h2>See what I've done</h2>
-    <ul>
-        <li>code</li>
-        <li>music</li>
-    </ul>
-</section>-->
-<section class="c-section_alt h-screen mt-8 flex items-center justify-center">
-    <h1 class="">
-        Thanks for being a part of the mess.
-    </h1>
-</section>
+</main>
+<script src="/static/js/vendor/particles.js"></script>
 {% endblock %}
+TODO: Background
+TODO: favicon

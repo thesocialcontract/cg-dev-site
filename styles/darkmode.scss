@@ -22,43 +22,17 @@ _			Hack
 6.  Utilities
 7.  Hacks
 -------------------------------------------------------------------*/
-$color-dom: #04041b;        // #29428C less saturated
-$color-dom-1: #081340;      // #091126
-$color-dom-2: #0e2154;      // #111E40
-$color-dom-3: #223a8c;      // #223773
-$color-dom-4: #050526;
 $color-accent: #EE639A;     // #eb6390
 $color-accent-1: #e79cb5;
 $color-selection: #AAA;
 $color-shadow: #101010a1;
 
-$color-font-light: #c2d9ff;
-$color-darkfont-for-darkbg: #7079e0;
-$color-font: $color-font-light;
+$color-font: #c2d9ff;
 
-$color-card-bg: $color-dom-2;
-$color-card-bg-translucent: #0c1646;
-
-$color-bg-dark: $color-dom;
-$color-bg-med: $color-dom-1;
-$color-bg-light: $color-dom-2;
-
-@mixin for-phone-only {
-    @media (max-width: 599px) { @content; }
-}
-@mixin for-tablet-portrait-up {
-    @media (min-width: 600px) { @content; }
-}
-@mixin for-tablet-landscape-up {
-    @media (min-width: 900px) { @content; }
-}
-@mixin for-desktop-up {
-    @media (min-width: 1200px) { @content; }
-}
-@mixin for-big-desktop-up {
-    @media (min-width: 1800px) { @content; }
-}
-
+$color-surface: hsl(240, 74%, 5%);
+$color-material: #061455;
+$color-highlight: hsl(230, 73%, 51%);
+$footer-height: 3rem;
 
 @mixin box-shadow-close {
     box-shadow: 0 0 1em $color-shadow, .5em .5em 1em $color-shadow
@@ -72,7 +46,7 @@ $color-bg-light: $color-dom-2;
 
 html {
     display: block;
-    background-color: $color-bg-dark;
+    background-color: $color-surface;
     color: $color-font;
 }
 
@@ -81,15 +55,15 @@ html {
 
 body { 
     margin: 0;
-    background: $color-bg-dark;
+    background: $color-surface;
     font-weight: 300;
-    font-family: sans-serif;
-    font-size: 16px;
+    font-family: IBM Plex Sans, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1em;
     height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
-    h1 { font-size: 3em; }
+    h1 { font-size: 3em; font-family: "Roboto Mono", Verdana; }
 	h2 { font-size: 2em; }
 	h3 { font-size: 1.5em; }
     h4 { font-size: 1.25em; font-weight: 600; }
@@ -109,12 +83,18 @@ button { cursor: pointer; }
 iframe { border: 0; }
 
 ::selection { background: $color-selection; color: #fff; }   
-
+.page-container {
+    position: relative;
+    min-height:100vh;
+}
+.material-icons {
+    vertical-align: middle;
+  }
 /* Components */
 .c-navbar {
     font-size: 1.15em;
     box-shadow: 0em 0.5em 1em $color-shadow;
-    background: $color-bg-light;
+    background: $color-material;
 }
     .c-navbar__item {
         position: relative;
@@ -123,50 +103,19 @@ iframe { border: 0; }
         margin: .5em;
     }
 
-
-.c-container {
-    padding: 1em;
-}
-
-    .c-container__central {
-        @include for-phone-only {
-            
-        }
-        @include for-tablet-portrait-up {
-            padding-top:    4rem;
-            padding-bottom: 4rem;
-            padding-left:   4rem;
-            padding-right:  4rem;
-        }
-        @include for-tablet-landscape-up {
-            padding-top:    12rem;
-            padding-bottom: 12rem;
-            padding-left:   8rem;
-            padding-right:  8rem;
-        }
-        @include for-desktop-up {
-            padding-top:    16rem;
-            padding-bottom: 20rem;
-            padding-left:   12rem;
-            padding-right:  12rem;
-        }
-    }
-
 .c-section {
-    background: $color-bg-dark;
+    background: $color-surface;
 }
     .c-section_alt {
-        background: $color-bg-med;
+        background: $color-material;
     }
 
 .c-footer {
-    height: 100%;
-    background: $color-bg-med;
+    height: $footer-height;
+    position: absolute;
+    bottom: 0;
+    background: $color-material;
 }
-    .c-footer__copyright {
-        font-size: 12px;
-        color: $color-font-light
-    }
 
 .c-home-icon {
     height: auto;
@@ -174,21 +123,24 @@ iframe { border: 0; }
     max-width: 2em;
     border-radius: 1em;
 }
-
-.c-card {
-    background: $color-card-bg;
-    @include box-shadow-far();
+.c-content {
+    padding-bottom: $footer-height;
+}
+.c-content-bubble {
+    padding: 1em;
+    margin: 1em 0.5em;
+    border-radius: 2em;
+    border-width: 1px;
+    border-color: #4a7efb;  // use color highlight?
+    background: $color-surface;
 }
 
-.c-card_dark {
-    background: $color-card-bg-translucent;
-    @include box-shadow-close();
+.c-content-bubble:hover {
+    background: scale-color($color-material, $lightness: 5%);
 }
 
-.c-main-bg {
-    background-image: url('/static/svg/bg-blue.svg');
-    background-position: bottom;
-    background-size: cover;
+.o-card-grad {
+    background: linear-gradient(45deg, $color-material, $color-highlight);
 }
 
 .u-hidden {
@@ -201,4 +153,8 @@ iframe { border: 0; }
 
 .h-half-screen {
     height: 50vh;
+}
+
+.clickable {
+    cursor: pointer;
 }

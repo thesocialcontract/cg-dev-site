@@ -1,3 +1,19 @@
+# --------------- Project Specific ----------------
+env_variables.yaml
+env_variables_prod.yaml
+cloud_sql_proxy
+secret-notes.md
+
+secret-*.md
+
+# CSS
+*.css.map
+cgsite/static/css/*
+cgsite/static/src/*
+.sass-cache
+
+# ------------- END Project Specific --------------
+
 # Python gitignore template from https://github.com/github/gitignore/blob/master/Python.gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -139,17 +155,3 @@ dmypy.json
 cython_debug/
 
 .vscode/
-# -----------------------------------------
-# ---------- PROJECT SPECIFIC -------------
-# -----------------------------------------
-env_variables.yaml
-env_variables_prod.yaml
-cloud_sql_proxy
-secret-notes.md
-
-secret-*.md
-
-# CSS
-*.css.map
-cgsite/static/css/*
-cgsite/static/src/*
