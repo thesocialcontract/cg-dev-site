@@ -1,1 +1,1 @@
-sass styles/darkmode.scss cgsite/static/css/darkmode.css
+sass --watch styles/:cgsite/static/css/

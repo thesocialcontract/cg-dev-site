@@ -40,7 +40,7 @@ Set environment variables in `.env` to your local postgresql instance.  Step int
 - Testing in Django
 - Realtime Glitchart, like Processing
 
-## Apps
-- blog
-- portfolio
-- gallery
+## App Structure
+- cgsite -- Where the Django core files live and 
+- core   -- Where toplevel, non-important, misc stuff go. This is where I would route to 1 page experiments (I should probably rename this)
+- blog   -- Self explanatory
