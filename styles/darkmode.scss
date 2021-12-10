@@ -158,3 +158,23 @@ iframe { border: 0; }
 .clickable {
     cursor: pointer;
 }
+
+
+// Main card hack
+@media only screen and (max-width: 440px) {
+    .c-main__name--sm {
+        display: none;
+    }
+    .c-main__name--xs {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 441px) {
+    .c-main__name--sm {
+        display: block;
+    }
+    .c-main__name--xs {
+        display: none;
+    }
+}
