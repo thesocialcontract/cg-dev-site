@@ -6,8 +6,3 @@ def index(request):
     template = loader.get_template("top/index.html")
     context = {}
     return HttpResponse(template.render(context, request))
-
-def julia(request):
-    template = loader.get_template("heart.html")
-    context = {}
-    return HttpResponse(template.render(context, request))
