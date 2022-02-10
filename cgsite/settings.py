@@ -32,8 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core.apps.CoreConfig',
-    'blog',
+    'top.apps.TopConfig',
+    'cms',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -131,7 +131,7 @@ STATICFILES_DIRS = [
 ]
 MEDIA_ROOT = str(CGSITE_DIR.joinpath("media"))
 MEDIA_URL = "/media/"
-WAGTAIL_SITE_NAME = 'CGSite Devblog'
+WAGTAIL_SITE_NAME = 'CGSite'
 WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.search.backends.database',

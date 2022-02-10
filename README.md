@@ -19,8 +19,10 @@ Set environment variables in `.env` to your local postgresql instance.  Step int
 
 ## Local Development
 1. Validate environment variables in `.env` to your local postgresql instance.  Set `CG_SITE_DEPLOY_ENV=local`
-2. Activate pipenv by running `pipenv shell`
-3. Run `python manage.py runserver`
+1. Activate pipenv by running `pipenv shell`
+1. Ensure postgres is running locally (if not, run `sudo service postgresql start`)
+1. Run SCSS compiler in watch mode `sass --watch styles/:cgsite/static/css/`
+1. Run `python manage.py runserver`
 
 ## To Deploy
 - Create env_variables_prod.yaml if necessary
@@ -34,13 +36,13 @@ Set environment variables in `.env` to your local postgresql instance.  Step int
 - Resume Page.
 - Github/Code walkthrough.
 - Store static files on GStorage
-- If we use a CMS, use [wagtail](https://docs.wagtail.io/)
+- Get CMS [wagtail](https://docs.wagtail.io/)
 
 ## Tech to Explore
 - Testing in Django
 - Realtime Glitchart, like Processing
 
 ## App Structure
-- cgsite -- Where the Django core files live and 
-- core   -- Where toplevel, non-important, misc stuff go. This is where I would route to 1 page experiments (I should probably rename this)
-- blog   -- Self explanatory
+- cgsite -- The main django application folder
+- top    -- Where toplevel, non-important, misc stuff go. This is where I would route to 1 page experiments
+- cms    -- Anything workable in cms. e.g. Blogs, style guides, etc.
