@@ -22,16 +22,25 @@ _			Hack
 6.  Utilities
 7.  Hacks
 -------------------------------------------------------------------*/
-$color-accent: #EE639A;     // #eb6390
-$color-accent-1: #e79cb5;
+
 $color-selection: #AAA;
 $color-shadow: #101010a1;
 
 $color-font: #c2d9ff;
+$color-font-secondary: hsl(231, 71%, 70%);
+$color-font-highlight: #fcac36;
 
 $color-surface: hsl(240, 74%, 5%);
-$color-material: #061455;
+$color-material: hsl(229, 87%, 18%);
 $color-highlight: hsl(230, 73%, 51%);
+$color-highlight-low: hsl(231, 80%, 8%); //hsl(231, 43%, 12%);
+
+$color-accent: #DC3558;
+$color-accent-1: #e79cb5;
+// $color-surface: #0B1D44;
+// $color-material: #0b1d44;
+// $color-highlight: #1698F0;
+// $color-highlight-low: 0b1d44;
 $footer-height: 3rem;
 
 @mixin box-shadow-close {
@@ -64,7 +73,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
     h1 { font-size: 3em; font-family: "Roboto Mono", Verdana; }
-	h2 { font-size: 2em; }
+	h2 { font-size: 2.25em; font-family: "Roboto Mono", Verdana; font-weight: 500; }
 	h3 { font-size: 1.5em; }
     h4 { font-size: 1.25em; font-weight: 600; }
 
@@ -112,8 +121,6 @@ iframe { border: 0; }
 
 .c-footer {
     height: $footer-height;
-    position: absolute;
-    bottom: 0;
     background: $color-material;
 }
 
@@ -139,9 +146,12 @@ iframe { border: 0; }
     background: scale-color($color-material, $lightness: 5%);
 }
 
-.o-card-grad {
-    background: linear-gradient(45deg, $color-material, $color-highlight);
+.border-bubble {
+    border-radius: 2em;
+    border-width: 1px;
+    border-color: #354468;
 }
+
 
 .u-hidden {
     visibility: hidden;
@@ -159,6 +169,31 @@ iframe { border: 0; }
     cursor: pointer;
 }
 
+.soft-corner {
+    border-radius: 1em;
+}
+
+.bg-material {
+    background: $color-material;
+}
+
+.bg-surface {
+    background: $color-surface;
+}
+
+.bg-grad-highlight {
+    background: linear-gradient(45deg, $color-material, $color-highlight);
+}
+.bg-grad-logo {
+    background: linear-gradient(20deg, $color-material, $color-accent); 
+}
+.bg-card-grad {
+    background: linear-gradient(90deg, $color-material, $color-highlight-low);
+}
+
+.font-secondary {
+    color: $color-font-secondary;
+}
 
 // Main card hack
 @media only screen and (max-width: 440px) {

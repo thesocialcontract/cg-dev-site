@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="flex md:justify-center">
+    <article class="m-4 p-12 bg-card-grad container max-w-lg soft-corner">
+        <header>
+            <h2>{{ page.title }}</h2>
+            <div class="font-secondary">
+                <div>{{ page.date }}</div>
+            </div>
+        </header>
+        <section class="my-4">
+            {{ page.body }}
+        </section>
+        <footer>
+            <div>tag1, tag2, tag3</div>
+        </footer>
+    </article>
+</section>
+{% endblock %}

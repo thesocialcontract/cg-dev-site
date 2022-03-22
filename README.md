@@ -43,6 +43,6 @@ Set environment variables in `.env` to your local postgresql instance.  Step int
 - Realtime Glitchart, like Processing
 
 ## App Structure
-- cgsite -- The main django application folder
-- top    -- Where toplevel, non-important, misc stuff go. This is where I would route to 1 page experiments
-- cms    -- Anything workable in cms. e.g. Blogs, style guides, etc.
+- cgsite   -- The main django application folder
+- toplevel -- Where toplevel, non-important, misc stuff go. This is where I would route to 1 page experiments
+- cms      -- Anything workable in cms. e.g. Blogs, style guides, etc.

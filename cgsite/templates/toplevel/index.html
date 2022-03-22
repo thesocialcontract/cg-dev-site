@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <main>
+<div class="page-container flex flex-col w-full lg:justify-center">
 <div id="particles-js" class="pointer-events-none z-0"></div>
 <section class="c-content">
     <div class="mr-16 mb-16 block md:flex md:justify-center lg:align-center z-10">
-        <div class="p-4 o-card-grad sm:w-10/12 md:w-8/12 md:flex-1 lg:max-w-min z-10">
+        <div class="p-4 bg-grad-highlight soft-corner sm:w-10/12 md:w-8/12 md:flex-1 lg:max-w-min z-10">
             <div>
                 <img src="/static/svg/muse.svg" class="max-w-md lg:max-w-lg">
             </div>
@@ -27,6 +28,7 @@
         </div>
     </div>
 </section>
+</div>
 </main>
 <script src="/static/js/vendor/particles.js"></script>
 {% endblock %}
