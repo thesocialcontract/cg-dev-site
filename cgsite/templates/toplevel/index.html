@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<main>
-<div class="page-container flex flex-col w-full lg:justify-center">
+<main class="flex-1 flex flex-col w-full lg:justify-center">
 <div id="particles-js" class="pointer-events-none z-0"></div>
 <section class="c-content">
     <div class="mr-16 mb-16 block md:flex md:justify-center lg:align-center z-10">
@@ -18,17 +17,16 @@
         </div>
         <div class="flex justify-between items-center w-full lg:max-w-xl z-10">
             <div class="container p-4">
-                <div onclick="location.href='https://github.com/thesocialcontract'" class="c-content-bubble clickable">
+                <div onclick="location.href='https://github.com/thesocialcontract'" class="c-content-bubble clickable c-hover-highlight">
                     <span class="material-icons">computer</span> code<span class="material-icons">navigate_next</span>
                 </div>
-                <div onclick="location.href='/blog'" class="c-content-bubble clickable">
+                <div onclick="location.href='/blog'" class="c-content-bubble clickable c-hover-highlight">
                     <span class="material-icons">text_snippet</span> devblog<span class="material-icons">navigate_next</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
-</div>
 </main>
 <script src="/static/js/vendor/particles.js"></script>
 {% endblock %}

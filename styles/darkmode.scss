@@ -92,10 +92,6 @@ button { cursor: pointer; }
 iframe { border: 0; }
 
 ::selection { background: $color-selection; color: #fff; }   
-.page-container {
-    position: relative;
-    min-height:100vh;
-}
 .material-icons {
     vertical-align: middle;
   }
@@ -142,7 +138,7 @@ iframe { border: 0; }
     background: $color-surface;
 }
 
-.c-content-bubble:hover {
+.c-hover-highlight:hover {
     background: scale-color($color-material, $lightness: 5%);
 }
 
