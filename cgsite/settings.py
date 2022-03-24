@@ -88,12 +88,13 @@ DATABASES = {
     'default': {
         'ENGINE':   env.DB_ENGINE,
         'HOST':     env.DB_HOST,
-        'PORT':     env.DB_PORT,
         'USER':     env.DB_USER,
         'PASSWORD': env.DB_PASS,
         'NAME':     env.DB_NAME,
     }
 }
+if DEBUG:
+    DATABASES['default']['PORT'] = env.DB_PORT
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
