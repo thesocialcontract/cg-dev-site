@@ -34,6 +34,7 @@ $color-surface: hsl(240, 74%, 5%);
 $color-material: hsl(229, 87%, 18%);
 $color-highlight: hsl(230, 73%, 51%);
 $color-highlight-low: hsl(231, 80%, 8%); //hsl(231, 43%, 12%);
+$color-border: hsl(230, 21%, 28%);
 
 $color-accent: #DC3558;
 $color-accent-1: #e79cb5;
@@ -83,9 +84,9 @@ p { margin: 1em 0; }
 
 ul { list-style: circle; }
 
-a { color: $color-accent; text-decoration: none; }
+.a { color: $color-accent; text-decoration: none; }
 
-	a:hover, a:focus { color: $color-accent-1 }
+	.a:hover, .a:focus { color: $color-accent-1 }
 
 button { cursor: pointer; }
 
@@ -114,11 +115,6 @@ iframe { border: 0; }
     .c-section_alt {
         background: $color-material;
     }
-
-.c-footer {
-    height: $footer-height;
-    background: $color-material;
-}
 
 .c-home-icon {
     height: auto;
@@ -189,6 +185,14 @@ iframe { border: 0; }
 
 .font-secondary {
     color: $color-font-secondary;
+}
+
+.border-color {
+    border-color: $color-border;
+}
+
+.filter-svg-color {
+    filter: invert(0.5) grayscale(100%) sepia(100%) hue-rotate(190deg) brightness(1.1) saturate(1.25);
 }
 
 // Main card hack
