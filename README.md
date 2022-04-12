@@ -31,12 +31,15 @@ Set environment variables in `.env` to your local postgresql instance.  Step int
 ## Wishlist
 - Switch to ASGI to enable websockets applications.
 - Plug in Aji.
-- Enable Development Blog.
+- ~~Enable Development Blog.~~
 - Glitchart Gallery.
 - Resume Page.
-- Github/Code walkthrough.
+- ~~Github~~
 - Store static files on GStorage
-- Get CMS [wagtail](https://docs.wagtail.io/)
+- ~~Get CMS [wagtail](https://docs.wagtail.io/)~~
+- Enable Wagtail Codeblocks
+- Enable Wagtail Musicblocks
+- Enable Search/Tagging for Content Pages
 
 ## Tech to Explore
 - Testing in Django

@@ -17,6 +17,9 @@ cgsite/static/admin/
 
 .local/
 
+# GCloud
+connect_to_proxy
+
 # ------------- END Project Specific --------------
 
 # Python gitignore template from https://github.com/github/gitignore/blob/master/Python.gitignore
