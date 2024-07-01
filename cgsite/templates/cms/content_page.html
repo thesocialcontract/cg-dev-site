@@ -1,22 +1,27 @@
 {% extends "base.html" %}
 {% block header %}
-<section class="flex md:justify-center w-full bg-material">
-    <div class="flex justify-start items-center w-full md:w-8/12 p-2">
-        <a class="min-w-1/12 flex-none" href="/">
-            <img src="/static/svg/muse.svg" class="h-12">        
-        </a>
-        <a class="shrink-0" href="/"><h2 class="text-2xl">cg.dev</h2></a>
+<section class="flex justify-center w-full bg-material">
+    <div class="flex justify-between items-center p-2 px-4 lg:p-2 w-full max-w-prose">
+        <div class="flex items-center">
+            <a class="min-w-1/12 flex-none" href="/">
+                <img src="/static/svg/muse.svg" class="h-12">
+            </a>
+            <a class="shrink-0" href="/"><h2 class="text-2xl">cg.dev</h2></a>
+        </div>
+        <div class="flex">
+            <a class="shrink-1" href="/blog"><h2 class="text-2xl">blog</h2></a>
+        </div>
     </div>
 </section>
 {% endblock %}
 {% block content %}
 <section class="flex flex-col flex-auto">
-    <div class="flex flex-none md:justify-center">
-        <article class="md:justify-center m-4 p-12 bg-card-grad container max-w-lg soft-corner">
+    <div class="flex flex-none justify-center">
+        <article class="m-4 px-12 py-10 bg-card-grad soft-corner container w-full max-w-prose">
             <section>
                 <h2>{{ page.title }}</h2>
                 <div class="font-secondary">
-                    <div>{{ page.date }}</div>
+                        <div>Posted on {{ page.first_published_at|date }}</div>
                 </div>
             </section>
             <section class="my-4">

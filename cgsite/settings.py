@@ -127,10 +127,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     str(CGSITE_DIR.joinpath("static"))
 ]
+#STATIC_ROOT = CGSITE_DIR.joinpath("static")
 MEDIA_ROOT = str(CGSITE_DIR.joinpath("media"))
 MEDIA_URL = "/media/"
 WAGTAIL_SITE_NAME = 'CGSite'

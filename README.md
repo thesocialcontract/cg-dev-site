@@ -29,17 +29,16 @@ Set environment variables in `.env` to your local postgresql instance.  Step int
 - run deploy.sh
 
 ## Wishlist
-- Switch to ASGI to enable websockets applications.
-- Plug in Aji.
 - ~~Enable Development Blog.~~
 - Glitchart Gallery.
 - Resume Page.
 - ~~Github~~
-- Store static files on GStorage
 - ~~Get CMS [wagtail](https://docs.wagtail.io/)~~
-- Enable Wagtail Codeblocks
-- Enable Wagtail Musicblocks
-- Enable Search/Tagging for Content Pages
+- ~~Enable Wagtail Codeblocks~~
+- Build Wagtail Musicblocks - https://www.alphatab.net/docs/getting-started
+- ~~Enable Tagging for Content Pages~~
+- Enable Search for Content Pages
+- Tag organization
 
 ## Tech to Explore
 - Testing in Django
