@@ -1,2 +1,2 @@
-pipenv lock -r > requirements.txt
+pipenv requirements > requirements.txt
 gcloud app deploy app.yaml

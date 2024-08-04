@@ -3,7 +3,7 @@ Source for my dev site.  Intended to be a gallery and playground.
 
 ## Setup
 You'll need:
-- Python 3.8 or greater.
+- Python 3.12 or greater.
 - Google Cloud SDK
 - Pipenv
 
