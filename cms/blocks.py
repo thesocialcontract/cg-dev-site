@@ -1,4 +1,4 @@
-from wagtail.core import blocks
+from wagtail import blocks
 from django import forms
 
 CODE_BLOCK_LANGUAGES = (

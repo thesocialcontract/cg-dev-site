@@ -1,11 +1,11 @@
 from django.db import models
 from django.core.paginator import EmptyPage, Paginator
 
-from wagtail.core.models import Page # Page allows you to assign models into the wagtail tree structure
-from wagtail.core.fields import StreamField, RichTextField
-from wagtail.core import blocks
+from wagtail.models import Page # Page allows you to assign models into the wagtail tree structure
+from wagtail.fields import StreamField
+from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.search import index
 from modelcluster.fields import ParentalKey
 from modelcluster.contrib.taggit import ClusterTaggableManager
@@ -60,7 +60,6 @@ class ContentPage(Page):
     tags = ClusterTaggableManager(through=ContentTag, blank=True)
     date = models.DateField("Post date")
     body = StreamField([
-
         ('richtext', blocks.RichTextBlock(features=[
                     'h3','h4','h5','h6','bold','italic','ol',
                     'ul','hr','link','document-link', 'embed',
@@ -78,6 +77,6 @@ class ContentPage(Page):
     # Editor Panels Configuration
     content_panels = Page.content_panels + [
         FieldPanel('date'),
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
         FieldPanel('tags'),
     ]

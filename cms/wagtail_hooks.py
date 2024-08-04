@@ -1,4 +1,4 @@
-from wagtail.core import hooks
+from wagtail import hooks
 from wagtail.contrib.redirects.models import Redirect
 
 # Create redirect when editing slugs

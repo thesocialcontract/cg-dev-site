@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from cgsite import env_var_service as env
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR   = Path(__file__).resolve().parent.parent
@@ -36,7 +35,6 @@ INSTALLED_APPS = [
     'cms',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
-    'wagtail.contrib.routable_page',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -45,7 +43,7 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail',
     'modelcluster',
     'taggit',
 ]
@@ -127,13 +125,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    str(CGSITE_DIR.joinpath("static"))
-]
-#STATIC_ROOT = CGSITE_DIR.joinpath("static")
-MEDIA_ROOT = str(CGSITE_DIR.joinpath("media"))
-MEDIA_URL = "/media/"
+# STATICFILES_DIRS = [
+#     str(CGSITE_DIR.joinpath("static"))
+# ]
+STATIC_ROOT = str( CGSITE_DIR.joinpath("static") )
+MEDIA_ROOT = str( CGSITE_DIR.joinpath("media") )
+MEDIA_URL = "/media/" # if DEBUG else google cloud
 WAGTAIL_SITE_NAME = 'CGSite'
+WAGTAILDOCS_EXTENSIONS = ['midi', 'mxl']
+WAGTAILADMIN_BASE_URL = "https://calebgeorge.dev"
 WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.search.backends.database',

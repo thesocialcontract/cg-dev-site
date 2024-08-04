@@ -1,4 +1,4 @@
-runtime: python38
+runtime: python312
 # Entrypoint will default to main.py and App Engine's magic.
 
 instance_class: F1
